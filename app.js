@@ -1,7 +1,7 @@
 let userNum = document.getElementById("getNumber");
-userNum.addEventListener("keydown", function(e){
+userNum.addEventListener("keydown", function (e){
     if (e.keyCode == 13){
-        return(e);
+        run(e);
     }
 });
 
@@ -32,28 +32,28 @@ function userNumber(){
 function compareNumbers(){
     let a = userNumber();
     let b = randomNum();
-    let c = document.getElementById("compare");
-    let d = document.getElementById("counter");
-    if (a!=b) {
-        c.style.textAlign = "center";
+    let z = document.getElementById("compare");
+    let c = document.getElementById("counter");
+    if (a != b) {
+        z.style.textAlign = "center";
         counter++;
-        d.innerHTML = `Numbers are the same. Computer got ${b}, and user got ${a}`
-        d.style.color= "white";
-        d.style.backgroundColor = "#312f2f";
-        d.style.padding = "20px";
-        d. style.textAlign = "center";
-        
-    }else if (a == b){
-        c.innerHTML = `Numbers are the same. Computer got ${b}, and user got ${a}`
+        c.innerHTML = "You have tried " + counter + " times to get it right."
         c.style.color= "white";
+        c.style.backgroundColor = "#312f2f";
+        c.style.padding = "20px";
+        c.style.textAlign = "center";
+
+    }else if (a == b){
+        z.innerHTML = "Numbers are the same. Computer got " + b + ", and user got " + a;
+        z.style.color = "white";
+        z.style.backgroundColor = "#00ff00";
+        z.style.padding = "20px";
+        z.style.textAlign = "center";
+        c.innerHTML = "You tried " + counter + " times to get it right.";
+        c.style.color = "white";
         c.style.backgroundColor = "#00ff00";
         c.style.padding = "20px";
-        c. style.textAlign = "center";
-        d.innerHTML = `You have tried ${counter} times to get it right.`
-        d.style.color= "white";
-        d.style.backgroundColor = "#00ff00";
-        d.style.padding = "20px";
-        d. style.textAlign = "center";
+        c.style.textAlign = "center";
         counter = 0;
         document.querySelector("body").style.backgroundColor = "#e4ff9c";
     }
